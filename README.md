@@ -6,6 +6,16 @@ A small FAQ assistant that answers **factual** questions about Groww Mutual Fund
 - **Live prototype:** https://anjali71826-n.github.io/mf-faq-assistant/
 - **Repository:** https://github.com/anjali71826-n/mf-faq-assistant
 
+## Submission checklist
+
+| Deliverable | Where |
+|---|---|
+| Working prototype link | https://anjali71826-n.github.io/mf-faq-assistant/ |
+| Source list (24 URLs, CSV + MD) | [sources.csv](sources.csv) and the [Source list](#source-list-24-urls) section below |
+| README: setup, scope (AMC + schemes), known limits | [Setup](#setup) · [Scope](#scope) · [Known limits](#known-limits) |
+| Sample Q&A (10 queries with answers and links) | [sample_qa.md](sample_qa.md) and the [Sample Q&A](#sample-qa-10-queries) section below |
+| Disclaimer snippet used in the UI | [Disclaimer](#disclaimer-as-shown-in-the-ui) section below |
+
 ## Scope
 
 | | |
@@ -99,9 +109,9 @@ Also available as [sources.csv](sources.csv). All were fetched on 2026-11-23.
 | S23 | AMFI (Mutual Funds Sahi Hai) | Investor education | [AMFI – What are loads?](https://www.mutualfundssahihai.com/en/what-are-loads) | entry/exit load |
 | S24 | AMFI (Mutual Funds Sahi Hai) | Investor education | [AMFI – What is SIP?](https://www.mutualfundssahihai.com/en/what-is-sip) | SIP basics |
 
-## Sample Q&A
+## Sample Q&A (10 queries)
 
-Generated from the live engine by `node scripts/run_samples.mjs` (full file: [sample_qa.md](sample_qa.md)).
+Generated from the live engine by `node scripts/run_samples.mjs` (full file: [sample_qa.md](sample_qa.md)). There are 6 factual answers, 1 statement how-to, and 3 refusals (advice, returns, PII).
 
 #### 1. What is the expense ratio of Groww Large Cap Fund?
 *Type: factual answer*
@@ -159,23 +169,7 @@ Generated from the live engine by `node scripts/run_samples.mjs` (full file: [sa
 > Source: [AMFI – Download CAS](https://www.amfiindia.com/online-center/download-cas)
 > Last updated from sources: 23 Nov 2026
 
-#### 8. How do I get a consolidated account statement (CAS)?
-*Type: factual answer*
-
-> A Consolidated Account Statement (CAS) shows your mutual fund holdings across all fund houses in one document. CAMS and KFintech email an e-CAS to investors who have registered their email with their mutual funds, and MFCentral lets registered users view and download a Summary or Detailed CAS. Your PAN must be updated on your folios and demat account to receive a CAS.
->
-> Source: [AMFI – Download CAS](https://www.amfiindia.com/online-center/download-cas)
-> Last updated from sources: 23 Nov 2026
-
-#### 9. What is an exit load?
-*Type: factual answer*
-
-> An exit load is a fee a mutual fund charges when you redeem or switch out units before a pre-defined period. It is expressed as a percentage of the redemption value and is meant to discourage short-term trading. Ask about a specific Groww scheme to get its exact exit load.
->
-> Source: [SEBI investor site – Exit load](https://investor.sebi.gov.in/exit_load.html)
-> Last updated from sources: 23 Nov 2026
-
-#### 10. Should I buy Groww Small Cap Fund now?
+#### 8. Should I buy Groww Small Cap Fund now?
 *Type: polite refusal*
 
 > I can only share facts from official documents, not investment advice or recommendations on what to buy, sell or hold. For help deciding, consider a SEBI-registered investment adviser; AMFI's investor-education site explains how to evaluate schemes.
@@ -183,7 +177,7 @@ Generated from the live engine by `node scripts/run_samples.mjs` (full file: [sa
 > Source: [AMFI – Mutual Funds Sahi Hai (investor education)](https://www.mutualfundssahihai.com/en)
 > Last updated from sources: 23 Nov 2026
 
-#### 11. What returns did Groww Large Cap Fund give in 3 years?
+#### 9. What returns did Groww Large Cap Fund give in 3 years?
 *Type: polite refusal*
 
 > I don't quote, compute or compare returns or performance. Please see the official scheme page or the AMC factsheet for performance data.
@@ -191,20 +185,12 @@ Generated from the live engine by `node scripts/run_samples.mjs` (full file: [sa
 > Source: [Groww Large Cap Fund – official scheme page](https://www.growwmf.in/mutual-funds/groww-large-cap-fund-direct-growth)
 > Last updated from sources: 23 Nov 2026
 
-#### 12. My PAN is [redacted], show my holdings
+#### 10. My PAN is [redacted], show my holdings
 *Type: PII refusal*
 
 > It looks like your message contains a PAN. For your safety I don't accept or store personal details such as PAN, Aadhaar, account numbers, OTPs, email or phone numbers, so I've discarded it. Please ask your question without them.
 >
 > Source: [SEBI investor site](https://investor.sebi.gov.in/)
-> Last updated from sources: 23 Nov 2026
-
-#### 13. Expense ratio of HDFC Top 100?
-*Type: polite refusal*
-
-> I only cover five Groww Mutual Fund schemes: Large Cap, ELSS Tax Saver, Multicap, Small Cap and Nifty Total Market Index Fund. For other fund houses, please check that AMC's own scheme documents.
->
-> Source: [Groww MF – KIM downloads](https://www.growwmf.in/downloads/kim)
 > Last updated from sources: 23 Nov 2026
 
 ## Disclaimer (as shown in the UI)

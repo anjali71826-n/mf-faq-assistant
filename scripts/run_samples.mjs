@@ -16,12 +16,9 @@ export const SAMPLES = [
   "What is the riskometer and benchmark of the Nifty Total Market Index Fund?",
   "Benchmark of Groww Multicap Fund?",
   "How do I download my capital-gains statement?",
-  "How do I get a consolidated account statement (CAS)?",
-  "What is an exit load?",
   "Should I buy Groww Small Cap Fund now?",
   "What returns did Groww Large Cap Fund give in 3 years?",
   "My PAN is ABCDE1234F, show my holdings",
-  "Expense ratio of HDFC Top 100?",
 ];
 
 const rows = SAMPLES.map((q) => ({ q, a: answer(q) }));
