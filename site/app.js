@@ -1,4 +1,4 @@
-import { createEngine } from "./engine.js";
+import { createEngine } from "./engine.js?v=2";
 
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -155,7 +155,7 @@ $$(".filter button").forEach((b) => b.addEventListener("click", () => {
 
 /* ---------------- Boot ---------------- */
 route();
-Promise.all(["corpus", "schemes", "sources"].map((f) => fetch(`data/${f}.json`).then((r) => r.json())))
+Promise.all(["corpus", "schemes", "sources"].map((f) => fetch(`data/${f}.json?v=2`).then((r) => r.json())))
   .then(([corpus, schemes, sources]) => {
     state.answer = createEngine(corpus, schemes);
     state.schemes = schemes.schemes;
