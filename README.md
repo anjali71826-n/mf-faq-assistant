@@ -16,16 +16,19 @@ A small FAQ assistant that answers **factual** questions about Groww Mutual Fund
 | **Questions handled** | expense ratio / TER, exit load, minimum SIP & lumpsum, lock-in, 80C status, riskometer, benchmark, fund managers, objective, category, CAS / capital-gains statement, general definitions |
 | **Refused politely** | buy/sell/hold or "which is better" advice, returns or performance questions, other fund houses, any personal data |
 
-## The web app
+## The web app: a B2B console
 
-The app's design is inspired by Apple: system fonts, large titles, a translucent navigation bar with segmented tabs (an iOS-style tab bar on phones), and light and dark modes. It is static HTML/CSS/JS with no build step and no backend.
+The app is a SaaS-style **answer desk for mutual fund support and content teams**. Its design is inspired by Apple: a macOS-style left sidebar, system fonts, translucent bars, and light and dark modes, with a slide-in drawer on phones. It is static HTML/CSS/JS with no build step and no backend.
 
-| View | What it shows |
+| Sidebar item | What it does |
 |---|---|
-| **Ask** | Welcome line, the "Facts-only. No investment advice." note and three suggestion cards. Tapping a suggestion **fills the input** so you can edit it before pressing Enter. Answers **stream in word by word** and then show their single source link and the "Last updated" date. |
-| **Schemes** | One card per scheme: expense ratio, exit load, minimum SIP and lumpsum, lock-in, a riskometer gauge, the benchmark, and links to the official page and KIM. Returns are left out on purpose. |
-| **Sources** | All 24 official pages in an inset list, filterable by Groww MF, SEBI or AMFI. |
-| **About** | How it works, privacy, known limits and the disclaimer. |
+| **Assistant** | The chat. It shows the welcome line, the "Facts-only. No investment advice." note and three suggestion cards. Tapping a suggestion **fills the input** so it can be edited before pressing Enter. Answers **stream in word by word**, then show their single source link and the "Last updated" date. The chat follows new text unless you scroll up to read. An **Answer trace** panel shows how each answer was produced: the guardrail result, the detected scheme and topic, the route (structured fact, curated answer or BM25 passage) and the source. |
+| **Knowledge base** | One card per scheme: expense ratio, exit load, minimum SIP and lumpsum, lock-in, a riskometer gauge, the benchmark, and links to the official page and KIM. Returns are left out on purpose. |
+| **Sources** | All 24 official pages in a table, with counts and a Groww MF / SEBI / AMFI filter, plus CSV export. |
+| **Guardrails** | The five policies that run before any answer (PII block, no advice, no performance claims, scope lock, grounded and cited). Each has a **Test** button that sends an example to the Assistant. |
+| **Insights** | Live session metrics: questions asked, answer rate, refusals, PII blocked, topic and outcome breakdowns, and a query log. Everything stays in memory, and reloading clears it. |
+| **Embed widget** | A copy-paste `<iframe>` snippet and a live preview. `?embed=1` shows only the chat, for help centres or in-app support screens. |
+| **About & compliance** | How it works, privacy, known limits and the disclaimer. |
 
 ## How it works
 
@@ -59,7 +62,7 @@ Deployment: pushing to `main` publishes `site/` to GitHub Pages via `.github/wor
 ## Project structure
 
 ```
-site/            index.html · style.css · app.js (views, routing, streaming) · engine.js (guardrails + retrieval) · data/ (corpus, schemes, sources JSON)
+site/            index.html · style.css · app.js (console views, routing, streaming, trace, insights) · engine.js (guardrails + retrieval) · data/ (corpus, schemes, sources JSON)
 scripts/         build_corpus.py (ingestion) · run_samples.mjs (sample Q&A generator)
 docs/            prompt_design.md (W1/W2 decisions, instruction style, refusal templates)
 sources.csv      the 24 source URLs        sample_qa.md   generated sample answers

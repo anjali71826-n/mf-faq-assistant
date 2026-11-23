@@ -199,28 +199,28 @@ export function createEngine(corpus, schemesDoc) {
 
   return function answer(raw) {
     const q = (raw || "").trim().slice(0, 500);
-    if (!q) return reply("refuse", "Please type a question about one of the five Groww Mutual Fund schemes listed below.", EDU.kimHub);
+    if (!q) return reply("refuse", "Please type a question about one of the five Groww Mutual Fund schemes listed below.", EDU.kimHub, { rule: "empty" });
 
     if (/^(hi|hello|hey|namaste|good (morning|afternoon|evening)|thanks?|thank you)\b[\s!.]*$/i.test(q)) {
-      return reply("answer", "Hello! Ask me a factual question about Groww Mutual Fund's Large Cap, ELSS Tax Saver, Multicap, Small Cap or Nifty Total Market Index Fund, for example its expense ratio, exit load or minimum SIP.", EDU.kimHub);
+      return reply("answer", "Hello! Ask me a factual question about Groww Mutual Fund's Large Cap, ELSS Tax Saver, Multicap, Small Cap or Nifty Total Market Index Fund, for example its expense ratio, exit load or minimum SIP.", EDU.kimHub, { rule: "greeting" });
     }
     for (const [label, re] of PII) {
       if (re.test(q)) {
-        return reply("pii", `It looks like your message contains ${/^[aeiou]/i.test(label) ? "an" : "a"} ${label}. For your safety I don't accept or store personal details such as PAN, Aadhaar, account numbers, OTPs, email or phone numbers, so I've discarded it. Please ask your question without them.`, EDU.pii, { redact: true });
+        return reply("pii", `It looks like your message contains ${/^[aeiou]/i.test(label) ? "an" : "a"} ${label}. For your safety I don't accept or store personal details such as PAN, Aadhaar, account numbers, OTPs, email or phone numbers, so I've discarded it. Please ask your question without them.`, EDU.pii, { redact: true, rule: "pii", piiType: label });
       }
     }
 
     const detected = SCHEME_PATTERNS.filter(([, re]) => re.test(q)).map(([k]) => k);
     if (ADVICE.test(q)) {
-      return reply("refuse", "I can only share facts from official documents, not investment advice or recommendations on what to buy, sell or hold. For help deciding, consider a SEBI-registered investment adviser; AMFI's investor-education site explains how to evaluate schemes.", EDU.advice);
+      return reply("refuse", "I can only share facts from official documents, not investment advice or recommendations on what to buy, sell or hold. For help deciding, consider a SEBI-registered investment adviser; AMFI's investor-education site explains how to evaluate schemes.", EDU.advice, { rule: "advice", scheme: detected[0] });
     }
     if (PERFORMANCE.test(q) && !/capital[\s-]?gain/i.test(q)) {
       const key = detected[0];
       const src = key ? { title: `${schemes[key].name.replace(/ Direct Growth$/, "")} – official scheme page`, url: schemes[key].url } : EDU.factsheet;
-      return reply("refuse", "I don't quote, compute or compare returns or performance. Please see the official scheme page or the AMC factsheet for performance data.", src);
+      return reply("refuse", "I don't quote, compute or compare returns or performance. Please see the official scheme page or the AMC factsheet for performance data.", src, { rule: "performance", scheme: key });
     }
     if (OTHER_AMC.test(q) && !detected.length) {
-      return reply("refuse", "I only cover five Groww Mutual Fund schemes: Large Cap, ELSS Tax Saver, Multicap, Small Cap and Nifty Total Market Index Fund. For other fund houses, please check that AMC's own scheme documents.", EDU.kimHub);
+      return reply("refuse", "I only cover five Groww Mutual Fund schemes: Large Cap, ELSS Tax Saver, Multicap, Small Cap and Nifty Total Market Index Fund. For other fund houses, please check that AMC's own scheme documents.", EDU.kimHub, { rule: "scope" });
     }
 
     const intents = INTENTS.filter(([, re]) => re.test(q)).map(([k]) => k);
@@ -234,29 +234,29 @@ export function createEngine(corpus, schemesDoc) {
         // A second fact is added only when it comes from the same page (one citation per answer).
         const second = intents.slice(1).map((i) => schemeFact(key, i)).find((f) => f && f[1].url === fact[1].url);
         const skipped = !more && intents.length > 1 && !second && intents[1] !== "statement" ? " Ask about the other fact separately so I can cite its own source." : "";
-        return reply("answer", fact[0] + (second && !more ? " " + second[0] : "") + more + skipped, fact[1], { intent, scheme: key });
+        return reply("answer", fact[0] + (second && !more ? " " + second[0] : "") + more + skipped, fact[1], { intent, scheme: key, rule: "fact" });
       }
       if (intent === "expense_ratio") {
-        return reply("answer", `The official scheme page for ${schemes[key].name.replace(/ Direct Growth$/, "")} doesn't currently show an expense ratio. Its KIM says current expenses are published on the AMC's expense-ratio page, along with notices of any TER change at least three working days in advance.`, { title: "Groww MF – Expense ratio / TER notices", url: "https://www.growwmf.in/downloads/expense-ratio" }, { intent, scheme: key });
+        return reply("answer", `The official scheme page for ${schemes[key].name.replace(/ Direct Growth$/, "")} doesn't currently show an expense ratio. Its KIM says current expenses are published on the AMC's expense-ratio page, along with notices of any TER change at least three working days in advance.`, { title: "Groww MF – Expense ratio / TER notices", url: "https://www.growwmf.in/downloads/expense-ratio" }, { intent, scheme: key, rule: "fact" });
       }
-      return reply("answer", `The official scheme page for ${schemes[key].name.replace(/ Direct Growth$/, "")} does not currently list this. Please check the scheme's Key Information Memorandum (KIM).`, { title: "KIM (official)", url: schemes[key].kim_url }, { intent, scheme: key });
+      return reply("answer", `The official scheme page for ${schemes[key].name.replace(/ Direct Growth$/, "")} does not currently list this. Please check the scheme's Key Information Memorandum (KIM).`, { title: "KIM (official)", url: schemes[key].kim_url }, { intent, scheme: key, rule: "fact" });
     }
 
     if (detected.length && !intent) {
       const s = schemes[detected[0]];
       const short = s.name.replace(/ Direct Growth$/, "");
-      return reply("answer", `${short}: expense ratio ${s.expense_ratio_pct ?? "see KIM"}${s.expense_ratio_pct != null ? "%" : ""}, minimum SIP ${s.min_sip ? rupees(s.min_sip) : "see KIM"}, riskometer "${s.riskometer}", benchmark ${s.benchmark}. Ask about any one fact (e.g. exit load or lock-in) for detail.`, { title: `${short} – official scheme page`, url: s.url }, { scheme: detected[0] });
+      return reply("answer", `${short}: expense ratio ${s.expense_ratio_pct ?? "see KIM"}${s.expense_ratio_pct != null ? "%" : ""}, minimum SIP ${s.min_sip ? rupees(s.min_sip) : "see KIM"}, riskometer "${s.riskometer}", benchmark ${s.benchmark}. Ask about any one fact (e.g. exit load or lock-in) for detail.`, { title: `${short} – official scheme page`, url: s.url }, { scheme: detected[0], rule: "fact" });
     }
 
     // Curated how-to answers (statements, definitions).
     const card = CURATED.find((c) => (c.when ? c.when.test(q) : true) && (c.intent ? c.intent === intent : true));
-    if (card) return reply("answer", card.text, card.source, { intent, via: "curated" });
+    if (card) return reply("answer", card.text, card.source, { intent, via: "curated", rule: "curated" });
 
     // General question (no scheme named): retrieve from the preferred official sources.
     const pool = intent && GENERAL_SOURCES[intent];
     const hit = (pool && retrieve(q + " " + intent.replace("_", " "), pool, 2)) || retrieve(q, null, 6);
-    if (hit) return reply("answer", hit.text, hit.source, { intent, via: "retrieval" });
+    if (hit) return reply("answer", hit.text, hit.source, { intent, via: "retrieval", rule: "retrieval", score: hit.score });
 
-    return reply("refuse", "I couldn't find that in my official sources. I answer factual questions (expense ratio, exit load, minimum SIP, lock-in, riskometer, benchmark, statements) about five Groww Mutual Fund schemes.", EDU.kimHub);
+    return reply("refuse", "I couldn't find that in my official sources. I answer factual questions (expense ratio, exit load, minimum SIP, lock-in, riskometer, benchmark, statements) about five Groww Mutual Fund schemes.", EDU.kimHub, { rule: "notfound" });
   };
 }
