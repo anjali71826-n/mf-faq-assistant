@@ -219,6 +219,8 @@ def main() -> None:
     meta = {"amc": "Groww Mutual Fund (Groww Asset Management Ltd.)", "last_updated": today, "source_count": len(rows)}
     (OUT / "corpus.json").write_text(json.dumps({"meta": meta, "chunks": chunks}, ensure_ascii=False))
     (OUT / "schemes.json").write_text(json.dumps({"meta": meta, "schemes": schemes}, ensure_ascii=False, indent=1))
+    keys = ["id", "publisher", "type", "title", "url", "topics", "fetched_on"]
+    (OUT / "sources.json").write_text(json.dumps({"meta": meta, "sources": [dict(zip(keys, r)) for r in rows]}, ensure_ascii=False, indent=1))
     with open(ROOT / "sources.csv", "w", newline="") as f:
         w = csv.writer(f)
         w.writerow(["id", "publisher", "type", "title", "url", "topics", "fetched_on"])

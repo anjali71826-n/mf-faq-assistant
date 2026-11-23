@@ -1,0 +1,225 @@
+{
+ "meta": {
+  "amc": "Groww Mutual Fund (Groww Asset Management Ltd.)",
+  "last_updated": "2026-11-23",
+  "source_count": 24
+ },
+ "sources": [
+  {
+   "id": "S01",
+   "publisher": "Groww MF (AMC)",
+   "type": "Scheme page",
+   "title": "Groww Large Cap Fund – scheme page",
+   "url": "https://www.growwmf.in/mutual-funds/groww-large-cap-fund-direct-growth",
+   "topics": "expense ratio; exit load; min SIP; riskometer; benchmark",
+   "fetched_on": "2026-11-23"
+  },
+  {
+   "id": "S02",
+   "publisher": "Groww MF (AMC)",
+   "type": "Scheme page",
+   "title": "Groww ELSS Tax Saver Fund – scheme page",
+   "url": "https://www.growwmf.in/mutual-funds/groww-elss-tax-saver-fund-direct-growth",
+   "topics": "expense ratio; lock-in; min SIP; riskometer; benchmark",
+   "fetched_on": "2026-11-23"
+  },
+  {
+   "id": "S03",
+   "publisher": "Groww MF (AMC)",
+   "type": "Scheme page",
+   "title": "Groww Multicap Fund – scheme page",
+   "url": "https://www.growwmf.in/mutual-funds/groww-multicap-fund-direct-growth",
+   "topics": "expense ratio; exit load; min SIP; riskometer; benchmark",
+   "fetched_on": "2026-11-23"
+  },
+  {
+   "id": "S04",
+   "publisher": "Groww MF (AMC)",
+   "type": "Scheme page",
+   "title": "Groww Small Cap Fund – scheme page",
+   "url": "https://www.growwmf.in/mutual-funds/groww-small-cap-fund-direct-growth",
+   "topics": "expense ratio; exit load; min SIP; riskometer; benchmark",
+   "fetched_on": "2026-11-23"
+  },
+  {
+   "id": "S05",
+   "publisher": "Groww MF (AMC)",
+   "type": "Scheme page",
+   "title": "Groww Nifty Total Market Index Fund – scheme page",
+   "url": "https://www.growwmf.in/mutual-funds/groww-nifty-total-market-index-fund-direct-growth",
+   "topics": "expense ratio; exit load; min SIP; riskometer; benchmark",
+   "fetched_on": "2026-11-23"
+  },
+  {
+   "id": "S06",
+   "publisher": "Groww MF (AMC)",
+   "type": "KIM (PDF)",
+   "title": "KIM – Groww Large Cap Fund",
+   "url": "https://assets-netstorage.growwmf.in/compliance_docs/Downloads/KIM/Equity%20Funds/KIM_Groww%20Largecap%20Fund.pdf",
+   "topics": "loads; min amounts; benchmark; riskometer",
+   "fetched_on": "2026-11-23"
+  },
+  {
+   "id": "S07",
+   "publisher": "Groww MF (AMC)",
+   "type": "KIM (PDF)",
+   "title": "KIM – Groww ELSS Tax Saver Fund",
+   "url": "https://assets-netstorage.growwmf.in/compliance_docs/Downloads/KIM/Equity%20Funds/KIM_Groww%20ELSS%20Tax%20Saver%20Fund.pdf",
+   "topics": "lock-in; loads; min amounts; benchmark",
+   "fetched_on": "2026-11-23"
+  },
+  {
+   "id": "S08",
+   "publisher": "Groww MF (AMC)",
+   "type": "KIM (PDF)",
+   "title": "KIM – Groww Multicap Fund",
+   "url": "https://assets-netstorage.growwmf.in/compliance_docs/Downloads/KIM/Equity%20Funds/KIM%20-%20Groww%20Multicap%20Fund.pdf",
+   "topics": "loads; min amounts; benchmark",
+   "fetched_on": "2026-11-23"
+  },
+  {
+   "id": "S09",
+   "publisher": "Groww MF (AMC)",
+   "type": "KIM (PDF)",
+   "title": "KIM – Groww Small Cap Fund",
+   "url": "https://assets-netstorage.growwmf.in/compliance_docs/Downloads/KIM/Equity%20Funds/KIM_Groww%20Small%20cap%20Fund.pdf",
+   "topics": "loads; min amounts; benchmark",
+   "fetched_on": "2026-11-23"
+  },
+  {
+   "id": "S10",
+   "publisher": "Groww MF (AMC)",
+   "type": "KIM (PDF)",
+   "title": "KIM – Groww Nifty Total Market Index Fund",
+   "url": "https://assets-netstorage.growwmf.in/compliance_docs/Downloads/KIM/Index%20Funds/KIM_Groww%20Nifty%20Total%20Market%20Index%20Fund.pdf",
+   "topics": "loads; min amounts; tracking; benchmark",
+   "fetched_on": "2026-11-23"
+  },
+  {
+   "id": "S11",
+   "publisher": "Groww MF (AMC)",
+   "type": "Downloads page",
+   "title": "Riskometer disclosures (downloads)",
+   "url": "https://www.growwmf.in/downloads/riskometer",
+   "topics": "riskometer history",
+   "fetched_on": "2026-11-23"
+  },
+  {
+   "id": "S12",
+   "publisher": "Groww MF (AMC)",
+   "type": "Downloads page",
+   "title": "Fact sheet (downloads)",
+   "url": "https://www.growwmf.in/downloads/fact-sheet",
+   "topics": "factsheet; performance (link only)",
+   "fetched_on": "2026-11-23"
+  },
+  {
+   "id": "S13",
+   "publisher": "Groww MF (AMC)",
+   "type": "Downloads page",
+   "title": "Expense ratio / TER change notices (downloads)",
+   "url": "https://www.growwmf.in/downloads/expense-ratio",
+   "topics": "TER change notices",
+   "fetched_on": "2026-11-23"
+  },
+  {
+   "id": "S14",
+   "publisher": "Groww MF (AMC)",
+   "type": "Investor charter (PDF)",
+   "title": "Investor Charter – Groww Mutual Fund",
+   "url": "https://assets-netstorage.growwmf.in/compliance_docs/Downloads/Investor%20charter/Investor%20Charter_GrowwMF.pdf",
+   "topics": "statements; services; grievances",
+   "fetched_on": "2026-11-23"
+  },
+  {
+   "id": "S15",
+   "publisher": "Groww MF (AMC)",
+   "type": "Investor education (PDF)",
+   "title": "Basics of Mutual Funds – Groww MF investor education",
+   "url": "https://cms-resources.growwmf.in/uploads/Basics_of_Mutual_Fund_49ab4e2810.pdf",
+   "topics": "basics; NAV; loads; SIP",
+   "fetched_on": "2026-11-23"
+  },
+  {
+   "id": "S16",
+   "publisher": "SEBI",
+   "type": "Investor page",
+   "title": "SEBI investor site – Consolidated Account Statement (CAS)",
+   "url": "https://investor.sebi.gov.in/consolidated_account_statement.html",
+   "topics": "CAS; statements",
+   "fetched_on": "2026-11-23"
+  },
+  {
+   "id": "S17",
+   "publisher": "SEBI",
+   "type": "Investor page",
+   "title": "SEBI investor site – Exit load",
+   "url": "https://investor.sebi.gov.in/exit_load.html",
+   "topics": "exit load definition",
+   "fetched_on": "2026-11-23"
+  },
+  {
+   "id": "S18",
+   "publisher": "SEBI",
+   "type": "FAQ (PDF)",
+   "title": "SEBI – FAQs for Mutual Fund Investors (Sep 2024)",
+   "url": "https://www.sebi.gov.in/sebi_data/faqfiles/sep-2024/1727242783639.pdf",
+   "topics": "expense ratio; riskometer; ELSS; CAS",
+   "fetched_on": "2026-11-23"
+  },
+  {
+   "id": "S19",
+   "publisher": "SEBI",
+   "type": "Circular",
+   "title": "SEBI – Categorization and Rationalization of MF Schemes (Oct 2017)",
+   "url": "https://www.sebi.gov.in/legal/circulars/oct-2017/categorization-and-rationalization-of-mutual-fund-schemes_36199.html",
+   "topics": "scheme categories; large/small cap definitions",
+   "fetched_on": "2026-11-23"
+  },
+  {
+   "id": "S20",
+   "publisher": "AMFI",
+   "type": "Investor page",
+   "title": "AMFI – Download CAS",
+   "url": "https://www.amfiindia.com/online-center/download-cas",
+   "topics": "CAS download; capital gains statement",
+   "fetched_on": "2026-11-23"
+  },
+  {
+   "id": "S21",
+   "publisher": "AMFI",
+   "type": "Investor page",
+   "title": "AMFI – TER of MF schemes",
+   "url": "https://www.amfiindia.com/ter-of-mf-schemes",
+   "topics": "expense ratio / TER disclosure",
+   "fetched_on": "2026-11-23"
+  },
+  {
+   "id": "S22",
+   "publisher": "AMFI (Mutual Funds Sahi Hai)",
+   "type": "Investor education",
+   "title": "AMFI – ELSS: tax-saving mutual funds",
+   "url": "https://www.mutualfundssahihai.com/en/elss-fund-tax-saving-mutual-fund",
+   "topics": "ELSS lock-in; 80C",
+   "fetched_on": "2026-11-23"
+  },
+  {
+   "id": "S23",
+   "publisher": "AMFI (Mutual Funds Sahi Hai)",
+   "type": "Investor education",
+   "title": "AMFI – What are loads?",
+   "url": "https://www.mutualfundssahihai.com/en/what-are-loads",
+   "topics": "entry/exit load",
+   "fetched_on": "2026-11-23"
+  },
+  {
+   "id": "S24",
+   "publisher": "AMFI (Mutual Funds Sahi Hai)",
+   "type": "Investor education",
+   "title": "AMFI – What is SIP?",
+   "url": "https://www.mutualfundssahihai.com/en/what-is-sip",
+   "topics": "SIP basics",
+   "fetched_on": "2026-11-23"
+  }
+ ]
+}

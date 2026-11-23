@@ -2,49 +2,131 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MF Facts Assistant</title>
-<meta name="description" content="Facts-only FAQ assistant for five Groww Mutual Fund schemes, answered from official AMC, SEBI and AMFI pages.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<title>MF Facts</title>
+<meta name="description" content="Facts-only FAQ assistant for five Groww Mutual Fund schemes, answered from official AMC, SEBI and AMFI pages with one source link per answer.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a72e8'/%3E%3Cpath d='M9 21V11l7 6 7-6v10' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main class="wrap">
-  <header class="top">
-    <div class="brand"><span class="dot" aria-hidden="true"></span> MF Facts Assistant</div>
-    <span class="tag">Groww Mutual Fund · 5 schemes</span>
-  </header>
+<a class="skip" href="#main">Skip to content</a>
 
-  <section class="intro">
-    <h1>Ask a fact about a Groww Mutual Fund scheme.</h1>
-    <p class="welcome">Hi! I answer factual questions, such as expense ratio, exit load, minimum SIP, ELSS lock-in, riskometer, benchmark and how to download statements. Every answer comes from official AMC, SEBI or AMFI pages and links to its source.</p>
-    <p class="note" role="note"><strong>Facts-only. No investment advice.</strong> I won't recommend schemes, compare returns, or accept personal details (PAN, Aadhaar, account numbers, OTPs, email, phone).</p>
+<header class="nav" role="banner">
+  <div class="nav-inner">
+    <a class="logo" href="#/ask" aria-label="MF Facts home">
+      <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M9 21V11l7 6 7-6v10"/></svg></span>
+      MF Facts
+    </a>
+    <nav class="seg" aria-label="Sections">
+      <a href="#/ask" data-route="ask">Ask</a>
+      <a href="#/schemes" data-route="schemes">Schemes</a>
+      <a href="#/sources" data-route="sources">Sources</a>
+      <a href="#/about" data-route="about">About</a>
+    </nav>
+    <span class="nav-badge">Facts only</span>
+  </div>
+</header>
+
+<main id="main">
+  <!-- ASK -->
+  <section class="view" id="view-ask" data-view="ask" aria-labelledby="ask-title">
+    <div class="hero">
+      <p class="eyebrow">Groww Mutual Fund · 5 schemes</p>
+      <h1 id="ask-title">Mutual fund facts.<br><span class="soft">Straight from the source.</span></h1>
+      <p class="lede">Hi! Ask about expense ratio, exit load, minimum SIP, ELSS lock-in, riskometer, benchmark or how to download a statement. Every answer links to one official AMC, SEBI or AMFI page.</p>
+      <p class="pill-note" role="note"><svg aria-hidden="true" viewBox="0 0 20 20"><path d="M10 2.5 3.5 5v4.6c0 4 2.8 7 6.5 8 3.7-1 6.5-4 6.5-8V5L10 2.5Z"/><path d="m7 10 2 2 4-4"/></svg><span><strong>Facts-only. No investment advice.</strong> No recommendations, no returns, and no personal details (PAN, Aadhaar, account numbers, OTPs, email, phone).</span></p>
+    </div>
+
+    <div class="suggest" aria-label="Example questions">
+      <button class="suggest-card" data-q="What is the expense ratio of Groww Large Cap Fund?"><span class="suggest-k">Expense ratio</span><span class="suggest-q">Expense ratio of Groww Large Cap Fund?</span></button>
+      <button class="suggest-card" data-q="ELSS lock-in?"><span class="suggest-k">Lock-in</span><span class="suggest-q">ELSS lock-in?</span></button>
+      <button class="suggest-card" data-q="How do I download my capital-gains statement?"><span class="suggest-k">Statements</span><span class="suggest-q">How do I download my capital-gains statement?</span></button>
+    </div>
+
+    <p class="suggest-hint">Tap a suggestion to put it in the box below. Edit it if you like, then press Enter.</p>
+
+    <div id="thread" class="thread" aria-live="polite"></div>
+    <div class="composer-spacer" aria-hidden="true"></div>
   </section>
 
-  <section class="examples" aria-label="Example questions">
-    <button class="chip" data-q="What is the expense ratio of Groww Large Cap Fund?">Expense ratio of Groww Large Cap Fund?</button>
-    <button class="chip" data-q="ELSS lock-in?">ELSS lock-in?</button>
-    <button class="chip" data-q="How do I download my capital-gains statement?">How do I download my capital-gains statement?</button>
+  <!-- SCHEMES -->
+  <section class="view" id="view-schemes" data-view="schemes" aria-labelledby="schemes-title" hidden>
+    <div class="page-head">
+      <p class="eyebrow">Direct Plan · Growth option</p>
+      <h1 id="schemes-title">Schemes</h1>
+      <p class="lede">Key facts for the five schemes in scope, taken from each scheme's official page or KIM. Returns are left out on purpose.</p>
+    </div>
+    <div id="scheme-grid" class="scheme-grid"></div>
   </section>
 
-  <section id="log" class="log" aria-live="polite"></section>
+  <!-- SOURCES -->
+  <section class="view" id="view-sources" data-view="sources" aria-labelledby="sources-title" hidden>
+    <div class="page-head">
+      <p class="eyebrow" id="sources-eyebrow">Public pages only</p>
+      <h1 id="sources-title">Sources</h1>
+      <p class="lede">Every answer is built from these official pages. No third-party blogs, no app screenshots.</p>
+    </div>
+    <div class="filter" role="tablist" aria-label="Filter by publisher">
+      <button role="tab" data-pub="all" aria-selected="true">All</button>
+      <button role="tab" data-pub="Groww" aria-selected="false">Groww MF</button>
+      <button role="tab" data-pub="SEBI" aria-selected="false">SEBI</button>
+      <button role="tab" data-pub="AMFI" aria-selected="false">AMFI</button>
+    </div>
+    <div id="source-list" class="inset"></div>
+    <p class="fine"><a href="https://github.com/anjali71826-n/mf-faq-assistant/blob/main/sources.csv" target="_blank" rel="noopener noreferrer">Download as CSV</a></p>
+  </section>
 
-  <form id="ask" class="ask" autocomplete="off">
-    <label for="q" class="sr">Your question</label>
-    <input id="q" name="q" maxlength="300" placeholder="e.g. Exit load of Groww Small Cap Fund?" autocomplete="off" spellcheck="true">
-    <button type="submit">Ask</button>
-  </form>
+  <!-- ABOUT -->
+  <section class="view" id="view-about" data-view="about" aria-labelledby="about-title" hidden>
+    <div class="page-head">
+      <p class="eyebrow">How it works</p>
+      <h1 id="about-title">Built to say only what it can prove.</h1>
+    </div>
+    <div class="steps">
+      <article class="step"><span class="step-n">1</span><h3>Check</h3><p>Messages with personal details are hidden and discarded. Requests for advice or returns get a polite facts-only reply.</p></article>
+      <article class="step"><span class="step-n">2</span><h3>Understand</h3><p>It works out which scheme you mean and which single fact you're asking for, such as exit load or lock-in.</p></article>
+      <article class="step"><span class="step-n">3</span><h3>Retrieve</h3><p>The fact comes from the scheme's official page or KIM. Other questions are answered by a search over 24 official pages.</p></article>
+      <article class="step"><span class="step-n">4</span><h3>Cite</h3><p>Up to three sentences, exactly one source link, and the date the sources were last updated.</p></article>
+    </div>
 
-  <details class="scope">
-    <summary>What's covered</summary>
-    <p><strong>AMC:</strong> Groww Mutual Fund (Groww Asset Management Ltd.). <strong>Schemes (Direct – Growth):</strong> Groww Large Cap Fund, Groww ELSS Tax Saver Fund, Groww Multicap Fund, Groww Small Cap Fund, Groww Nifty Total Market Index Fund.</p>
-    <p><strong>Sources:</strong> <span id="srcCount">24</span> public pages from growwmf.in, sebi.gov.in, amfiindia.com and AMFI's mutualfundssahihai.com. <span id="updated"></span></p>
-    <p>Nothing you type is stored or sent anywhere. Answers are computed in your browser from a pre-built index of the official pages.</p>
-  </details>
+    <div class="about-grid">
+      <article class="panel">
+        <h2>Privacy</h2>
+        <p>There is no backend, no account and no analytics. Answers are computed in your browser from a pre-built index of official pages, and nothing you type is stored or sent anywhere.</p>
+      </article>
+      <article class="panel">
+        <h2>Known limits</h2>
+        <ul>
+          <li>The facts are a snapshot from the date shown, not live data.</li>
+          <li>The Groww Multicap Fund page doesn't list an expense ratio or minimum SIP, so the app links the KIM instead of guessing.</li>
+          <li>It understands questions through keyword rules, so unusual wording can miss.</li>
+          <li>It answers about one scheme at a time, so each answer has one source.</li>
+        </ul>
+      </article>
+    </div>
 
-  <footer class="foot">
-    <p><strong>Disclaimer:</strong> This assistant provides factual information from official public documents only. It is not investment, tax or legal advice and does not recommend any scheme. Mutual fund investments are subject to market risks; read all scheme-related documents carefully. This is an independent learning project and is not affiliated with Groww, SEBI or AMFI.</p>
-  </footer>
+    <article class="panel disclaimer" id="disclaimer">
+      <h2>Disclaimer</h2>
+      <p>This assistant provides factual information from official public documents only. It is not investment, tax or legal advice and does not recommend any scheme. Mutual fund investments are subject to market risks; read all scheme-related documents carefully. This is an independent learning project and is not affiliated with Groww, SEBI or AMFI.</p>
+    </article>
+  </section>
 </main>
+
+<form id="composer" class="composer" autocomplete="off">
+  <label for="q" class="sr">Ask a factual question</label>
+  <input id="q" name="q" maxlength="300" placeholder="Ask a fact, e.g. exit load of Groww Small Cap Fund" autocomplete="off" enterkeyhint="send">
+  <button type="submit" aria-label="Ask"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 16V4M5 9l5-5 5 5"/></svg></button>
+</form>
+
+<nav class="tabbar" aria-label="Sections">
+  <a href="#/ask" data-route="ask"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.5 4v-4h0A1.5 1.5 0 0 1 4 14.5Z"/></svg>Ask</a>
+  <a href="#/schemes" data-route="schemes"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2"/><rect x="3.5" y="13.5" width="7" height="7" rx="2"/><rect x="13.5" y="13.5" width="7" height="7" rx="2"/></svg>Schemes</a>
+  <a href="#/sources" data-route="sources"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h10l4 4v12H5Z"/><path d="M15 4v4h4M8.5 12.5h7M8.5 16h7"/></svg>Sources</a>
+  <a href="#/about" data-route="about"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5M12 8h.01"/></svg>About</a>
+</nav>
+
 <script type="module" src="app.js"></script>
 </body>
 </html>

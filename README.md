@@ -16,6 +16,17 @@ A small FAQ assistant that answers **factual** questions about Groww Mutual Fund
 | **Questions handled** | expense ratio / TER, exit load, minimum SIP & lumpsum, lock-in, 80C status, riskometer, benchmark, fund managers, objective, category, CAS / capital-gains statement, general definitions |
 | **Refused politely** | buy/sell/hold or "which is better" advice, returns or performance questions, other fund houses, any personal data |
 
+## The web app
+
+The app's design is inspired by Apple: system fonts, large titles, a translucent navigation bar with segmented tabs (an iOS-style tab bar on phones), and light and dark modes. It is static HTML/CSS/JS with no build step and no backend.
+
+| View | What it shows |
+|---|---|
+| **Ask** | Welcome line, the "Facts-only. No investment advice." note and three suggestion cards. Tapping a suggestion **fills the input** so you can edit it before pressing Enter. Answers **stream in word by word** and then show their single source link and the "Last updated" date. |
+| **Schemes** | One card per scheme: expense ratio, exit load, minimum SIP and lumpsum, lock-in, a riskometer gauge, the benchmark, and links to the official page and KIM. Returns are left out on purpose. |
+| **Sources** | All 24 official pages in an inset list, filterable by Groww MF, SEBI or AMFI. |
+| **About** | How it works, privacy, known limits and the disclaimer. |
+
 ## How it works
 
 ```
@@ -48,7 +59,7 @@ Deployment: pushing to `main` publishes `site/` to GitHub Pages via `.github/wor
 ## Project structure
 
 ```
-site/            index.html · style.css · app.js (UI) · engine.js (guardrails + retrieval) · data/ (corpus.json, schemes.json)
+site/            index.html · style.css · app.js (views, routing, streaming) · engine.js (guardrails + retrieval) · data/ (corpus, schemes, sources JSON)
 scripts/         build_corpus.py (ingestion) · run_samples.mjs (sample Q&A generator)
 docs/            prompt_design.md (W1/W2 decisions, instruction style, refusal templates)
 sources.csv      the 24 source URLs        sample_qa.md   generated sample answers
