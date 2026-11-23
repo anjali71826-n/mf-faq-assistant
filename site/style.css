@@ -1,0 +1,74 @@
+:root {
+  --bg: #f6f7f5;
+  --card: #ffffff;
+  --ink: #17201b;
+  --muted: #5b675f;
+  --line: #dfe4df;
+  --accent: #0f7a55;
+  --accent-soft: #e3f2ea;
+  --warn: #8a5a00;
+  --warn-soft: #fbf1dc;
+  --user: #eef1ee;
+  --radius: 14px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #101412; --card: #171c19; --ink: #e7ece8; --muted: #9aa69e; --line: #2a322d;
+    --accent: #4fc392; --accent-soft: #173226; --warn: #e8b85a; --warn-soft: #2e2615; --user: #1e2420;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #101412; --card: #171c19; --ink: #e7ece8; --muted: #9aa69e; --line: #2a322d;
+  --accent: #4fc392; --accent-soft: #173226; --warn: #e8b85a; --warn-soft: #2e2615; --user: #1e2420;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 16px/1.55 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+.wrap { max-width: 720px; margin: 0 auto; padding: 24px 16px 48px; }
+.top { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.brand { font-weight: 650; display: flex; align-items: center; gap: 8px; }
+.dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+.tag { font-size: 13px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px; }
+.intro h1 { font-size: clamp(22px, 4.5vw, 30px); line-height: 1.2; margin: 28px 0 10px; letter-spacing: -0.01em; }
+.welcome { color: var(--muted); margin: 0 0 14px; }
+.note { margin: 0; padding: 10px 14px; background: var(--accent-soft); border-radius: 10px; font-size: 14.5px; }
+.note strong { color: var(--accent); }
+.examples { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 8px; }
+.chip {
+  font: inherit; font-size: 14px; cursor: pointer; color: var(--ink); background: var(--card);
+  border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px; text-align: left;
+}
+.chip:hover, .chip:focus-visible { border-color: var(--accent); outline: none; }
+.log { display: flex; flex-direction: column; gap: 12px; margin: 18px 0; }
+.msg { border-radius: var(--radius); padding: 12px 16px; max-width: 100%; overflow-wrap: anywhere; }
+.msg.user { align-self: flex-end; background: var(--user); max-width: 85%; }
+.msg.user.redacted { font-style: italic; color: var(--muted); }
+.msg.bot { background: var(--card); border: 1px solid var(--line); }
+.msg.bot.refuse, .msg.bot.pii { border-color: color-mix(in srgb, var(--warn) 45%, var(--line)); background: var(--warn-soft); }
+.msg .label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin-bottom: 4px; }
+.msg.refuse .label, .msg.pii .label { color: var(--warn); }
+.msg p { margin: 0; }
+.src { margin-top: 10px; font-size: 14px; }
+.src a { color: var(--accent); font-weight: 550; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.upd { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+.ask { display: flex; gap: 8px; position: sticky; bottom: 12px; background: var(--bg); padding: 6px 0; }
+.ask input {
+  flex: 1; min-width: 0; font: inherit; padding: 12px 14px; border-radius: 12px;
+  border: 1px solid var(--line); background: var(--card); color: var(--ink);
+}
+.ask input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.ask button {
+  font: inherit; font-weight: 600; padding: 0 20px; border-radius: 12px; border: 0;
+  background: var(--accent); color: #fff; cursor: pointer;
+}
+:root[data-theme="dark"] .ask button { color: #08130d; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ask button { color: #08130d; } }
+.scope { margin-top: 22px; font-size: 14.5px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 14px; }
+.scope summary { cursor: pointer; color: var(--ink); font-weight: 600; }
+.foot { margin-top: 18px; font-size: 13px; color: var(--muted); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }

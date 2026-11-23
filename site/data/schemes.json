@@ -1,0 +1,141 @@
+{
+ "meta": {
+  "amc": "Groww Mutual Fund (Groww Asset Management Ltd.)",
+  "last_updated": "2026-11-23",
+  "source_count": 24
+ },
+ "schemes": {
+  "large-cap": {
+   "name": "Groww Large Cap Fund Direct Growth",
+   "url": "https://www.growwmf.in/mutual-funds/groww-large-cap-fund-direct-growth",
+   "category": "Equity – Large Cap",
+   "plan": "Direct Plan – Growth option",
+   "expense_ratio_pct": 1.27,
+   "exit_load": "1% if redeemed/ switched out within 7 Days from the date of allotment; Nil - if redeemed/ switched out after 7 Days from the date of allotment",
+   "min_sip": 500,
+   "min_lumpsum": 500,
+   "min_additional": 500,
+   "lock_in": null,
+   "riskometer": "Very High",
+   "benchmark": "Nifty 100 TRI",
+   "benchmark_riskometer": "Very High",
+   "objective": "The scheme aims to provide investors with opportunities for long term capital appreciation by investing mainly in equity and equity-related securities of Large Cap Companies. However, there is no assurance that the investment objective of the scheme will be realized and the Scheme does not assure or guarantee any returns.",
+   "fund_managers": [
+    "Hitesh Das",
+    "Anupam Tiwari",
+    "Saptarshee Chatterjee",
+    "Nikhil Satam"
+   ],
+   "nav_date": "2026-11-20",
+   "field_sources": {},
+   "kim_url": "https://assets-netstorage.growwmf.in/compliance_docs/Downloads/KIM/Equity%20Funds/KIM_Groww%20Largecap%20Fund.pdf"
+  },
+  "elss": {
+   "name": "Groww ELSS Tax Saver Fund Direct Growth",
+   "url": "https://www.growwmf.in/mutual-funds/groww-elss-tax-saver-fund-direct-growth",
+   "category": "Equity – ELSS",
+   "plan": "Direct Plan – Growth option",
+   "expense_ratio_pct": 0.5,
+   "exit_load": "Nil",
+   "min_sip": 500,
+   "min_lumpsum": 500,
+   "min_additional": 500,
+   "lock_in": "3 years",
+   "riskometer": "Very High",
+   "benchmark": "Nifty 500 TRI",
+   "benchmark_riskometer": "Very High",
+   "objective": "The scheme aims to generate long term capital appreciation by investing in a diversified portfolio of mainly equity and equity related instruments. The scheme offers tax benefits under Section 80C of the Income Tax Act, 1961. However, there is no assurance that the investment objective of the scheme will be realized and the Scheme does not assure or guarantee any returns.",
+   "fund_managers": [
+    "Nikhil Satam",
+    "Paras Matalia"
+   ],
+   "nav_date": "2026-11-20",
+   "field_sources": {},
+   "kim_url": "https://assets-netstorage.growwmf.in/compliance_docs/Downloads/KIM/Equity%20Funds/KIM_Groww%20ELSS%20Tax%20Saver%20Fund.pdf"
+  },
+  "multicap": {
+   "name": "Groww Multicap Fund Direct Growth",
+   "url": "https://www.growwmf.in/mutual-funds/groww-multicap-fund-direct-growth",
+   "category": "Equity – Sectoral",
+   "plan": "Direct Plan – Growth option",
+   "expense_ratio_pct": null,
+   "exit_load": "1% if units are redeemed / switched out within 1 year from the date of allotment, Nil, if redeemed / switched out after 1 year from the date of allotment",
+   "min_sip": null,
+   "min_lumpsum": 500,
+   "min_additional": 500,
+   "lock_in": null,
+   "riskometer": "Very High",
+   "benchmark": "Nifty 500 Multicap 50:25:25 Index TRI",
+   "benchmark_riskometer": "Very High",
+   "objective": "To achieve long-term capital appreciation by predominantly investing\nin equity and equity-related instruments of large, mid and small-cap\ncompanies. However, there can be no assurance that the investment\nobjective of the scheme will be realised.",
+   "fund_managers": [
+    "Anupam Tiwari",
+    "Hitesh Das",
+    "Saptarshee Chatterjee",
+    "Nikhil Satam"
+   ],
+   "nav_date": "2026-11-20",
+   "field_sources": {
+    "benchmark": {
+     "url": "https://assets-netstorage.growwmf.in/compliance_docs/Downloads/KIM/Equity%20Funds/KIM%20-%20Groww%20Multicap%20Fund.pdf",
+     "note": "Scheme page widget shows 'Nifty 50 TRI'; the KIM names Nifty 500 Multicap 50:25:25 Index TRI."
+    }
+   },
+   "kim_url": "https://assets-netstorage.growwmf.in/compliance_docs/Downloads/KIM/Equity%20Funds/KIM%20-%20Groww%20Multicap%20Fund.pdf"
+  },
+  "small-cap": {
+   "name": "Groww Small Cap Fund Direct Growth",
+   "url": "https://www.growwmf.in/mutual-funds/groww-small-cap-fund-direct-growth",
+   "category": "Equity – Small Cap",
+   "plan": "Direct Plan – Growth option",
+   "expense_ratio_pct": 0.49,
+   "exit_load": "If redeemed within 1 year from the date of allotment: 1%; If redeemed after 1 year from the date of allotment: NIL",
+   "min_sip": 500,
+   "min_lumpsum": 500,
+   "min_additional": 500,
+   "lock_in": null,
+   "riskometer": "Very High",
+   "benchmark": "Nifty Smallcap 250 TRI",
+   "benchmark_riskometer": "Very High",
+   "objective": "The objective of the Scheme is to generate long term capital appreciation by investing in equity and equity related instruments of small cap companies",
+   "fund_managers": [
+    "Anupam Tiwari",
+    "Saptarshee Chatterjee",
+    "Nikhil Satam",
+    "Hitesh Das"
+   ],
+   "nav_date": "2026-11-20",
+   "field_sources": {
+    "expense_ratio_pct": {
+     "url": "https://assets-netstorage.growwmf.in/compliance_docs/Downloads/KIM/Equity%20Funds/KIM_Groww%20Small%20cap%20Fund.pdf",
+     "note": "Scheme page leaves expense ratio blank; KIM discloses Direct Plan total TER 0.49%."
+    }
+   },
+   "kim_url": "https://assets-netstorage.growwmf.in/compliance_docs/Downloads/KIM/Equity%20Funds/KIM_Groww%20Small%20cap%20Fund.pdf"
+  },
+  "total-market": {
+   "name": "Groww Nifty Total Market Index Fund Direct Growth",
+   "url": "https://www.growwmf.in/mutual-funds/groww-nifty-total-market-index-fund-direct-growth",
+   "category": "Equity – Index",
+   "plan": "Direct Plan – Growth option",
+   "expense_ratio_pct": 0.2,
+   "exit_load": "0.25% is payable if units are redeemed/switched-out within 7 days from the date of allotment. Nil - After 7 days",
+   "min_sip": 500,
+   "min_lumpsum": 500,
+   "min_additional": 500,
+   "lock_in": null,
+   "riskometer": "Very High",
+   "benchmark": "Nifty Total Market TRI",
+   "benchmark_riskometer": "Very High",
+   "objective": "The investment objective of the scheme is to achieve a return equivalent to the Nifty Total Market Index-TRI subject to tracking error. This index is diversified throughout the Indian market across sectors and market caps and aims to benefit from India’s economic growth. However, there is no assurance or guarantee that the investment objective of the Scheme will be achieved. The Scheme does not assure or guarantee any returns.",
+   "fund_managers": [
+    "Aakash Chauhan",
+    "Nikhil Satam",
+    "Shashi Kumar"
+   ],
+   "nav_date": "2026-11-20",
+   "field_sources": {},
+   "kim_url": "https://assets-netstorage.growwmf.in/compliance_docs/Downloads/KIM/Index%20Funds/KIM_Groww%20Nifty%20Total%20Market%20Index%20Fund.pdf"
+  }
+ }
+}

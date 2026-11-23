@@ -1,0 +1,25 @@
+id,publisher,type,title,url,topics,fetched_on
+S01,Groww MF (AMC),Scheme page,Groww Large Cap Fund – scheme page,https://www.growwmf.in/mutual-funds/groww-large-cap-fund-direct-growth,expense ratio; exit load; min SIP; riskometer; benchmark,2026-11-23
+S02,Groww MF (AMC),Scheme page,Groww ELSS Tax Saver Fund – scheme page,https://www.growwmf.in/mutual-funds/groww-elss-tax-saver-fund-direct-growth,expense ratio; lock-in; min SIP; riskometer; benchmark,2026-11-23
+S03,Groww MF (AMC),Scheme page,Groww Multicap Fund – scheme page,https://www.growwmf.in/mutual-funds/groww-multicap-fund-direct-growth,expense ratio; exit load; min SIP; riskometer; benchmark,2026-11-23
+S04,Groww MF (AMC),Scheme page,Groww Small Cap Fund – scheme page,https://www.growwmf.in/mutual-funds/groww-small-cap-fund-direct-growth,expense ratio; exit load; min SIP; riskometer; benchmark,2026-11-23
+S05,Groww MF (AMC),Scheme page,Groww Nifty Total Market Index Fund – scheme page,https://www.growwmf.in/mutual-funds/groww-nifty-total-market-index-fund-direct-growth,expense ratio; exit load; min SIP; riskometer; benchmark,2026-11-23
+S06,Groww MF (AMC),KIM (PDF),KIM – Groww Large Cap Fund,https://assets-netstorage.growwmf.in/compliance_docs/Downloads/KIM/Equity%20Funds/KIM_Groww%20Largecap%20Fund.pdf,loads; min amounts; benchmark; riskometer,2026-11-23
+S07,Groww MF (AMC),KIM (PDF),KIM – Groww ELSS Tax Saver Fund,https://assets-netstorage.growwmf.in/compliance_docs/Downloads/KIM/Equity%20Funds/KIM_Groww%20ELSS%20Tax%20Saver%20Fund.pdf,lock-in; loads; min amounts; benchmark,2026-11-23
+S08,Groww MF (AMC),KIM (PDF),KIM – Groww Multicap Fund,https://assets-netstorage.growwmf.in/compliance_docs/Downloads/KIM/Equity%20Funds/KIM%20-%20Groww%20Multicap%20Fund.pdf,loads; min amounts; benchmark,2026-11-23
+S09,Groww MF (AMC),KIM (PDF),KIM – Groww Small Cap Fund,https://assets-netstorage.growwmf.in/compliance_docs/Downloads/KIM/Equity%20Funds/KIM_Groww%20Small%20cap%20Fund.pdf,loads; min amounts; benchmark,2026-11-23
+S10,Groww MF (AMC),KIM (PDF),KIM – Groww Nifty Total Market Index Fund,https://assets-netstorage.growwmf.in/compliance_docs/Downloads/KIM/Index%20Funds/KIM_Groww%20Nifty%20Total%20Market%20Index%20Fund.pdf,loads; min amounts; tracking; benchmark,2026-11-23
+S11,Groww MF (AMC),Downloads page,Riskometer disclosures (downloads),https://www.growwmf.in/downloads/riskometer,riskometer history,2026-11-23
+S12,Groww MF (AMC),Downloads page,Fact sheet (downloads),https://www.growwmf.in/downloads/fact-sheet,factsheet; performance (link only),2026-11-23
+S13,Groww MF (AMC),Downloads page,Expense ratio / TER change notices (downloads),https://www.growwmf.in/downloads/expense-ratio,TER change notices,2026-11-23
+S14,Groww MF (AMC),Investor charter (PDF),Investor Charter – Groww Mutual Fund,https://assets-netstorage.growwmf.in/compliance_docs/Downloads/Investor%20charter/Investor%20Charter_GrowwMF.pdf,statements; services; grievances,2026-11-23
+S15,Groww MF (AMC),Investor education (PDF),Basics of Mutual Funds – Groww MF investor education,https://cms-resources.growwmf.in/uploads/Basics_of_Mutual_Fund_49ab4e2810.pdf,basics; NAV; loads; SIP,2026-11-23
+S16,SEBI,Investor page,SEBI investor site – Consolidated Account Statement (CAS),https://investor.sebi.gov.in/consolidated_account_statement.html,CAS; statements,2026-11-23
+S17,SEBI,Investor page,SEBI investor site – Exit load,https://investor.sebi.gov.in/exit_load.html,exit load definition,2026-11-23
+S18,SEBI,FAQ (PDF),SEBI – FAQs for Mutual Fund Investors (Sep 2024),https://www.sebi.gov.in/sebi_data/faqfiles/sep-2024/1727242783639.pdf,expense ratio; riskometer; ELSS; CAS,2026-11-23
+S19,SEBI,Circular,SEBI – Categorization and Rationalization of MF Schemes (Oct 2017),https://www.sebi.gov.in/legal/circulars/oct-2017/categorization-and-rationalization-of-mutual-fund-schemes_36199.html,scheme categories; large/small cap definitions,2026-11-23
+S20,AMFI,Investor page,AMFI – Download CAS,https://www.amfiindia.com/online-center/download-cas,CAS download; capital gains statement,2026-11-23
+S21,AMFI,Investor page,AMFI – TER of MF schemes,https://www.amfiindia.com/ter-of-mf-schemes,expense ratio / TER disclosure,2026-11-23
+S22,AMFI (Mutual Funds Sahi Hai),Investor education,AMFI – ELSS: tax-saving mutual funds,https://www.mutualfundssahihai.com/en/elss-fund-tax-saving-mutual-fund,ELSS lock-in; 80C,2026-11-23
+S23,AMFI (Mutual Funds Sahi Hai),Investor education,AMFI – What are loads?,https://www.mutualfundssahihai.com/en/what-are-loads,entry/exit load,2026-11-23
+S24,AMFI (Mutual Funds Sahi Hai),Investor education,AMFI – What is SIP?,https://www.mutualfundssahihai.com/en/what-is-sip,SIP basics,2026-11-23

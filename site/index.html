@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MF Facts Assistant</title>
+<meta name="description" content="Facts-only FAQ assistant for five Groww Mutual Fund schemes, answered from official AMC, SEBI and AMFI pages.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="wrap">
+  <header class="top">
+    <div class="brand"><span class="dot" aria-hidden="true"></span> MF Facts Assistant</div>
+    <span class="tag">Groww Mutual Fund · 5 schemes</span>
+  </header>
+
+  <section class="intro">
+    <h1>Ask a fact about a Groww Mutual Fund scheme.</h1>
+    <p class="welcome">Hi! I answer factual questions, such as expense ratio, exit load, minimum SIP, ELSS lock-in, riskometer, benchmark and how to download statements. Every answer comes from official AMC, SEBI or AMFI pages and links to its source.</p>
+    <p class="note" role="note"><strong>Facts-only. No investment advice.</strong> I won't recommend schemes, compare returns, or accept personal details (PAN, Aadhaar, account numbers, OTPs, email, phone).</p>
+  </section>
+
+  <section class="examples" aria-label="Example questions">
+    <button class="chip" data-q="What is the expense ratio of Groww Large Cap Fund?">Expense ratio of Groww Large Cap Fund?</button>
+    <button class="chip" data-q="ELSS lock-in?">ELSS lock-in?</button>
+    <button class="chip" data-q="How do I download my capital-gains statement?">How do I download my capital-gains statement?</button>
+  </section>
+
+  <section id="log" class="log" aria-live="polite"></section>
+
+  <form id="ask" class="ask" autocomplete="off">
+    <label for="q" class="sr">Your question</label>
+    <input id="q" name="q" maxlength="300" placeholder="e.g. Exit load of Groww Small Cap Fund?" autocomplete="off" spellcheck="true">
+    <button type="submit">Ask</button>
+  </form>
+
+  <details class="scope">
+    <summary>What's covered</summary>
+    <p><strong>AMC:</strong> Groww Mutual Fund (Groww Asset Management Ltd.). <strong>Schemes (Direct – Growth):</strong> Groww Large Cap Fund, Groww ELSS Tax Saver Fund, Groww Multicap Fund, Groww Small Cap Fund, Groww Nifty Total Market Index Fund.</p>
+    <p><strong>Sources:</strong> <span id="srcCount">24</span> public pages from growwmf.in, sebi.gov.in, amfiindia.com and AMFI's mutualfundssahihai.com. <span id="updated"></span></p>
+    <p>Nothing you type is stored or sent anywhere. Answers are computed in your browser from a pre-built index of the official pages.</p>
+  </details>
+
+  <footer class="foot">
+    <p><strong>Disclaimer:</strong> This assistant provides factual information from official public documents only. It is not investment, tax or legal advice and does not recommend any scheme. Mutual fund investments are subject to market risks; read all scheme-related documents carefully. This is an independent learning project and is not affiliated with Groww, SEBI or AMFI.</p>
+  </footer>
+</main>
+<script type="module" src="app.js"></script>
+</body>
+</html>
